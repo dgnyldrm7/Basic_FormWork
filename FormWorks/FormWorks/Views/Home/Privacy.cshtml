@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Profil>
+
+@{
+    ViewData["Title"] = "Datas Area";
+}
+
+
+<h1>@ViewData["Title"]</h1>
+<p>Search is made by name.</p>
+
+
+
+<div class="row justify-content-center text-dark text-center">
+
+    <div class="card col-md-8 mt-5">
+
+        <form method="get">
+            <div class="form-group">
+                <label for="search">Key Word</label>
+                <input class="form-control" name="search" id="search" placeholder="key word" />
+                <button class="btn btn-primary btn-sm m-2" type="submit"> Search </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+<div class="row justify-content-center text-dark text-center ">
+
+    <div class="card col-md-8 mt-5 border-5">
+
+        @foreach(var datas in Model)
+        {
+            <h5>Name :@datas.Name </h5> <h6>Email :@datas.Email</h6> <h6>Id :@datas.Id</h6> <hr />
+            
+        }
+    </div>
+</div>
